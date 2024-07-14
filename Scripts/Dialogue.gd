@@ -37,6 +37,14 @@ func _say(what):
 
 func catchRewards(reward):
 	_say(rewardDialogues[reward])
+	if reward == Global.rewards.Hydrate:
+		ChatAi.ChattingIntuition += 5
+	elif reward == Global.rewards.Cheese:
+		ChatAi.ChattingIntuition += 10
+		if randf() >= 0.6:
+			Variables.cheeseInflation += 1
+	else:
+		ChatAi.ChattingIntuition += 25
 
 func _ready():
 	_say(dialogs['Introduction'])
