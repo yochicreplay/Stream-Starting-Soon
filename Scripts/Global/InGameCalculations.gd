@@ -26,6 +26,27 @@ func _check_spawn_chest(delta):
 		chest_timer = chest_time
 	chest_timer -= delta
 
+var funnytime = 5.0
+var funnytimer:float = funnytime
+
+func _funnyCalculation(delta):
+	if funnytimer <= 0:
+		ChatAi.ChattingIntuition += max(-ChatAi.ChattingIntuition/5.0+10, (ChatAi.ChattingIntuition*ChatAi.ChattingIntuition-pow(ChatAi.ChattingIntuition, sqrt(ChatAi.ChattingIntuition))+1)*5, log(-ChatAi.ChattingIntuition+80)) / (100.0 / Variables.funnyFriends)
+		funnytimer = funnytime
+	funnytimer -= delta
+
+var readertime = 2.0
+var readertimer:float = readertime
+@onready var messages = get_tree().get_nodes_in_group("ChatMessage")
+
+func _readerCalculation(delta):
+	if readertimer <= 0:
+		if randf() >= 1.0 / Variables.readerFriends:
+			Variables.score += 1
+			messages.pick_random().queue_free()
+		readertimer = readertime
+	readertimer -= delta
+
 var alreadyInGame = false
 
 func _when_in_game():
@@ -41,3 +62,5 @@ func _process(delta):
 			_when_in_game()
 		_check_earn_bucks(delta)
 		_check_spawn_chest(delta)
+		_funnyCalculation(delta)
+		_readerCalculation(delta)
