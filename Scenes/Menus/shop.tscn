@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnjfysywcp3ye"]
+[gd_scene load_steps=17 format=3 uid="uid://bnjfysywcp3ye"]
 
 [ext_resource type="Theme" uid="uid://550jhmttlr2q" path="res://Styles/Streaming Site/popup.tres" id="1_m2i22"]
+[ext_resource type="Script" path="res://Scripts/shop_popup.gd" id="1_nrru2"]
 [ext_resource type="Script" path="res://Scripts/Shop Tabs.gd" id="2_on31i"]
 [ext_resource type="Theme" uid="uid://bhp44un8ylxyg" path="res://Styles/Streaming Site/button.tres" id="2_qvmi4"]
 [ext_resource type="Texture2D" uid="uid://d3fqewfkj0bh4" path="res://Sprites/Icons/UI/Rewards.png" id="3_yndr0"]
 [ext_resource type="Texture2D" uid="uid://hhmttnibu386" path="res://Sprites/Icons/UI/Mods.png" id="4_jpvdt"]
 [ext_resource type="Texture2D" uid="uid://dh6gatr6uv7jw" path="res://Sprites/Icons/Reward Icons/Water.png" id="5_au3ce"]
+[ext_resource type="AudioStream" uid="uid://bu5sq460jj8e0" path="res://Sounds/SFX/Tabs-click.wav" id="6_2s7h5"]
 [ext_resource type="Script" path="res://Scripts/Rewards.gd" id="6_4lxw3"]
 [ext_resource type="Texture2D" uid="uid://blmlksb175yd2" path="res://Sprites/Icons/Reward Icons/Cheese.png" id="6_58kob"]
 [ext_resource type="Texture2D" uid="uid://fqxadmderxvl" path="res://Sprites/Icons/Reward Icons/Dance.png" id="7_po8hr"]
@@ -13,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bee35ecpmm2fm" path="res://Sprites/Icons/Mod Icons/Streamer.png" id="8_3tpvk"]
 [ext_resource type="Texture2D" uid="uid://xaq7pql8g710" path="res://Sprites/Icons/Mod Icons/Funny.png" id="9_01lrp"]
 [ext_resource type="Texture2D" uid="uid://ccbfbuf2uufhf" path="res://Sprites/Icons/Mod Icons/Reader.png" id="10_4v1dd"]
+[ext_resource type="Texture2D" uid="uid://cxy1lkh1hbyli" path="res://Sprites/Icons/UI/Close.png" id="15_mfoij"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -22,6 +25,7 @@ offset_right = 0.559967
 offset_bottom = 0.0799866
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nrru2")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -55,6 +59,10 @@ theme = ExtResource("2_qvmi4")
 theme_override_font_sizes/font_size = 32
 text = "Friends"
 icon = ExtResource("4_jpvdt")
+
+[node name="Tab Sound" type="AudioStreamPlayer" parent="PanelContainer/VBoxContainer/Shop Tabs"]
+unique_name_in_owner = true
+stream = ExtResource("6_2s7h5")
 
 [node name="Rewards" type="GridContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -109,6 +117,8 @@ layout_mode = 2
 text = "1000 SGB"
 horizontal_alignment = 1
 
+[node name="Buy SFX" type="AudioStreamPlayer" parent="PanelContainer/VBoxContainer/Rewards"]
+
 [node name="Friends" type="GridContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 columns = 3
@@ -162,6 +172,21 @@ layout_mode = 2
 text = "2500 Scores"
 horizontal_alignment = 1
 
+[node name="Buy SFX" type="AudioStreamPlayer" parent="PanelContainer/VBoxContainer/Friends"]
+
+[node name="Exit Shop" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.886
+anchor_right = 0.114
+anchor_bottom = 1.0
+offset_top = -0.100006
+offset_right = 0.0999985
+grow_vertical = 0
+tooltip_text = "Closes the shop."
+texture_normal = ExtResource("15_mfoij")
+stretch_mode = 0
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Shop Tabs/Rewards Tab" to="PanelContainer/VBoxContainer/Shop Tabs" method="_on_rewards_tab_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Shop Tabs/Friends Tab" to="PanelContainer/VBoxContainer/Shop Tabs" method="_on_friends_tab_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Rewards/VBoxContainer/Hydrate" to="PanelContainer/VBoxContainer/Rewards" method="_on_hydrate_pressed"]
@@ -170,3 +195,4 @@ horizontal_alignment = 1
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Friends/VBoxContainer/Streamer" to="PanelContainer/VBoxContainer/Friends" method="_on_streamer_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Friends/VBoxContainer2/Funny" to="PanelContainer/VBoxContainer/Friends" method="_on_funny_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Friends/VBoxContainer3/Reader" to="PanelContainer/VBoxContainer/Friends" method="_on_reader_pressed"]
+[connection signal="pressed" from="Exit Shop" to="." method="_on_exit_shop_pressed"]
