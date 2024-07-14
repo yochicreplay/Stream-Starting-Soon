@@ -12,7 +12,7 @@ func _on_config_pressed():
 	initial_click_sound.play()
 	if !get_tree().get_first_node_in_group("Config"):
 		var new_config = CONFIG.instantiate()
-		get_tree().call_deferred('add_child', new_config)
+		get_tree().root.call_deferred('add_child', new_config)
 
 func _on_play_pressed():
 	initial_click_sound.play()
