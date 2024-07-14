@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://Shaders/stream_background.gdshader" id="2_bj8u7"]
 [ext_resource type="Theme" uid="uid://cqtya6aaawbue" path="res://Styles/Streaming Site/gray.tres" id="2_u6c1g"]
 [ext_resource type="Theme" uid="uid://diq4lrjuxirfr" path="res://Styles/Streaming Site/text.tres" id="3_gsupq"]
-[ext_resource type="Script" path="res://Scripts/Dialog.gd" id="4_e8wi6"]
+[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="4_e8wi6"]
 [ext_resource type="Theme" uid="uid://44an2lm6jxdl" path="res://Styles/Streaming Site/get_away_5pixels.tres" id="4_i2oh0"]
 [ext_resource type="Theme" uid="uid://b6ncd4gj4et7x" path="res://Styles/Streamer Things/LogoText.tres" id="4_jedt5"]
 [ext_resource type="Script" path="res://Scripts/ClickAnimation.gd" id="4_o3ueb"]

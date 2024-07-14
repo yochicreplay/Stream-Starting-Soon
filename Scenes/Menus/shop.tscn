@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ccbfbuf2uufhf" path="res://Sprites/Icons/Mod Icons/Reader.png" id="10_4v1dd"]
 [ext_resource type="Texture2D" uid="uid://cxy1lkh1hbyli" path="res://Sprites/Icons/UI/Close.png" id="15_mfoij"]
 
-[node name="Shop" type="Control"]
+[node name="Shop" type="Control" groups=["Shop"]]
 layout_mode = 3
 anchor_right = 0.182
 anchor_bottom = 0.324
