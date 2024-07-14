@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnjfysywcp3ye"]
+[gd_scene load_steps=12 format=3 uid="uid://bnjfysywcp3ye"]
 
 [ext_resource type="Theme" uid="uid://550jhmttlr2q" path="res://Styles/Streaming Site/popup.tres" id="1_m2i22"]
 [ext_resource type="Theme" uid="uid://bhp44un8ylxyg" path="res://Styles/Streaming Site/button.tres" id="2_qvmi4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dh6gatr6uv7jw" path="res://Sprites/Icons/Reward Icons/Water.png" id="5_au3ce"]
 [ext_resource type="Texture2D" uid="uid://blmlksb175yd2" path="res://Sprites/Icons/Reward Icons/Cheese.png" id="6_58kob"]
 [ext_resource type="Texture2D" uid="uid://fqxadmderxvl" path="res://Sprites/Icons/Reward Icons/Dance.png" id="7_po8hr"]
+[ext_resource type="Script" path="res://Scripts/Friends.gd" id="8_0riia"]
 [ext_resource type="Texture2D" uid="uid://bee35ecpmm2fm" path="res://Sprites/Icons/Mod Icons/Streamer.png" id="8_3tpvk"]
 [ext_resource type="Texture2D" uid="uid://xaq7pql8g710" path="res://Sprites/Icons/Mod Icons/Funny.png" id="9_01lrp"]
 [ext_resource type="Texture2D" uid="uid://ccbfbuf2uufhf" path="res://Sprites/Icons/Mod Icons/Reader.png" id="10_4v1dd"]
@@ -104,6 +105,7 @@ horizontal_alignment = 1
 [node name="Friends" type="GridContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 columns = 3
+script = ExtResource("8_0riia")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Friends"]
 layout_mode = 2
@@ -152,3 +154,7 @@ stretch_mode = 5
 layout_mode = 2
 text = "2500 Scores"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Friends/VBoxContainer/Streamer" to="PanelContainer/VBoxContainer/Friends" method="_on_streamer_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Friends/VBoxContainer2/Funny" to="PanelContainer/VBoxContainer/Friends" method="_on_funny_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Friends/VBoxContainer3/Reader" to="PanelContainer/VBoxContainer/Friends" method="_on_reader_pressed"]

@@ -339,9 +339,9 @@ anchors_preset = -1
 anchor_left = 0.241
 anchor_right = 0.759
 anchor_bottom = 0.767
-offset_left = 462.0
-offset_right = 1457.0
-offset_bottom = 828.0
+offset_left = -0.720001
+offset_right = -0.280029
+offset_bottom = -0.360046
 grow_horizontal = 2
 theme = ExtResource("2_8y14j")
 
@@ -390,18 +390,21 @@ stream = ExtResource("13_rbias")
 [node name="Config" type="TextureButton" parent="VideoThing/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Press to change the configurations."
 texture_normal = ExtResource("5_stinw")
 stretch_mode = 0
 
 [node name="Play" type="TextureButton" parent="VideoThing/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Press to start the game."
 texture_normal = ExtResource("5_e14in")
 stretch_mode = 0
 
 [node name="Close" type="TextureButton" parent="VideoThing/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Press to quit the game."
 texture_normal = ExtResource("5_17yp0")
 stretch_mode = 0
 
@@ -412,10 +415,8 @@ anchor_left = 0.241
 anchor_top = 0.767
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 462.0
-offset_top = 828.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -0.720001
+offset_top = -0.360046
 grow_horizontal = 2
 theme = ExtResource("5_e47b0")
 
@@ -457,9 +458,8 @@ anchors_preset = -1
 anchor_left = 0.759
 anchor_right = 1.479
 anchor_bottom = 1.0
-offset_left = 1458.0
-offset_right = 2840.0
-offset_bottom = 1080.0
+offset_left = 0.719971
+offset_right = 0.320068
 grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("2_ae1vg")
@@ -473,8 +473,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.241
 anchor_bottom = 1.0
-offset_right = 462.0
-offset_bottom = 1080.0
+offset_right = -0.720001
 grow_vertical = 2
 theme = ExtResource("2_ae1vg")
 
