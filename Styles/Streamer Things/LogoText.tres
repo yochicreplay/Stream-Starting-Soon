@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b6ncd4gj4et7x"]
+
+[ext_resource type="FontFile" uid="uid://blofict8iydf6" path="res://Styles/Streamer Things/Fonts/GaMaamli-Regular.ttf" id="1_1jsw6"]
+
+[resource]
+Label/font_sizes/font_size = 100
+Label/fonts/font = ExtResource("1_1jsw6")
+RichTextLabel/font_sizes/normal_font_size = 100
+RichTextLabel/fonts/normal_font = ExtResource("1_1jsw6")

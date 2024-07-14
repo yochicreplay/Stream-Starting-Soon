@@ -1,0 +1,522 @@
+[gd_scene load_steps=18 format=3 uid="uid://bqbcpcto6dpm6"]
+
+[ext_resource type="Theme" uid="uid://cfx26r38ahydf" path="res://Styles/Streaming Site/darkness.tres" id="1_55y6d"]
+[ext_resource type="Theme" uid="uid://e5csiww2ob5i" path="res://Styles/Streamer Things/BLU.tres" id="2_8y14j"]
+[ext_resource type="Theme" uid="uid://cqtya6aaawbue" path="res://Styles/Streaming Site/gray.tres" id="2_ae1vg"]
+[ext_resource type="Texture2D" uid="uid://cfqbn4a2qlbth" path="res://Sprites/Streaming/Main Menu/Gradient.png" id="2_uy0hi"]
+[ext_resource type="Theme" uid="uid://44an2lm6jxdl" path="res://Styles/Streaming Site/get_away_5pixels.tres" id="3_0hvjo"]
+[ext_resource type="Theme" uid="uid://diq4lrjuxirfr" path="res://Styles/Streaming Site/text.tres" id="4_4jlnv"]
+[ext_resource type="Theme" uid="uid://b6ncd4gj4et7x" path="res://Styles/Streamer Things/LogoText.tres" id="4_fcu82"]
+[ext_resource type="Texture2D" uid="uid://cxy1lkh1hbyli" path="res://Sprites/Icons/UI/Close.png" id="5_17yp0"]
+[ext_resource type="Texture2D" uid="uid://d3tt0ep8houvx" path="res://Sprites/Icons/UI/Play.png" id="5_e14in"]
+[ext_resource type="Theme" uid="uid://chloqpfu6oqdi" path="res://Styles/Streaming Site/almost_black.tres" id="5_e47b0"]
+[ext_resource type="Texture2D" uid="uid://dpub2p1tx6sde" path="res://Sprites/Icons/UI/Config.png" id="5_stinw"]
+[ext_resource type="Script" path="res://Scripts/InitialButton.gd" id="5_x51ar"]
+[ext_resource type="PackedScene" uid="uid://uf8bl45nypt1" path="res://Scenes/icon.tscn" id="9_y7y0l"]
+[ext_resource type="AudioStream" uid="uid://3d2r27u6tdw8" path="res://Sounds/SFX/Initial-buttons-click.wav" id="13_rbias"]
+
+[sub_resource type="Animation" id="Animation_vdq6q"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("For you:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Chat:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1458, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Info:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(462, 828)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VideoThing/HBoxContainer/Config:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VideoThing/HBoxContainer/Play:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VideoThing/HBoxContainer/Close:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Stream Starting Soon Background:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(462, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Stream Starting Soon Background:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Chat:anchor_left")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.759]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Chat:anchor_right")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.479]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("For you:size")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(462, 1080)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Chat:size")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1382, 1080)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Info:size")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1458, 252)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Stream Starting Soon Background:size")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(995, 828)]
+}
+
+[sub_resource type="Animation" id="Animation_1ond3"]
+resource_name = "Start Game"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("For you:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-463, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Chat:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1458, 0), Vector2(1350, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Info:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(462, 828), Vector2(0, 1080)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VideoThing/HBoxContainer/Config:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VideoThing/HBoxContainer/Play:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VideoThing/HBoxContainer/Close:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Stream Starting Soon Background:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(462, 0), Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Stream Starting Soon Background:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.36, 1.31)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Chat:anchor_left")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.759, 0.703]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Chat:anchor_right")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.479, 1.423]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i7rta"]
+_data = {
+"RESET": SubResource("Animation_vdq6q"),
+"Start Game": SubResource("Animation_1ond3")
+}
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Darkness" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_55y6d")
+
+[node name="Stream Starting Soon Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.241
+anchor_right = 0.759
+anchor_bottom = 0.767
+offset_left = 462.0
+offset_right = 1457.0
+offset_bottom = 828.0
+grow_horizontal = 2
+theme = ExtResource("2_8y14j")
+
+[node name="Gradient" type="TextureRect" parent="Stream Starting Soon Background"]
+layout_mode = 2
+texture = ExtResource("2_uy0hi")
+expand_mode = 1
+
+[node name="Label" type="RichTextLabel" parent="Stream Starting Soon Background"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_fcu82")
+bbcode_enabled = true
+text = "[center][shake]Stream Starting Soon![/shake][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="VideoThing" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.241
+anchor_right = 0.759
+anchor_bottom = 0.767
+offset_left = -0.720032
+offset_right = 0.719971
+offset_bottom = -0.360046
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VideoThing"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.807
+anchor_top = 0.922
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0679321
+offset_top = 0.327942
+offset_right = -0.160034
+offset_bottom = -0.256042
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_x51ar")
+
+[node name="Initial Click" type="AudioStreamPlayer" parent="VideoThing/HBoxContainer"]
+unique_name_in_owner = true
+stream = ExtResource("13_rbias")
+
+[node name="Config" type="TextureButton" parent="VideoThing/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("5_stinw")
+stretch_mode = 0
+
+[node name="Play" type="TextureButton" parent="VideoThing/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("5_e14in")
+stretch_mode = 0
+
+[node name="Close" type="TextureButton" parent="VideoThing/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("5_17yp0")
+stretch_mode = 0
+
+[node name="Info" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.241
+anchor_top = 0.767
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 462.0
+offset_top = 828.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+theme = ExtResource("5_e47b0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Info"]
+layout_mode = 2
+theme = ExtResource("3_0hvjo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Info/MarginContainer"]
+layout_mode = 2
+
+[node name="Icon" parent="Info/MarginContainer/HBoxContainer" instance=ExtResource("9_y7y0l")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Info/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Info/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_4jlnv")
+text = "SmallGrillDev"
+
+[node name="Description" type="RichTextLabel" parent="Info/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_4jlnv")
+bbcode_enabled = true
+text = "Name of Stream
+[color=purple]Stream Category[/color]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Chat" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.759
+anchor_right = 1.479
+anchor_bottom = 1.0
+offset_left = 1458.0
+offset_right = 2840.0
+offset_bottom = 1080.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_ae1vg")
+
+[node name="MarginContainer" type="MarginContainer" parent="Chat"]
+layout_mode = 2
+theme = ExtResource("3_0hvjo")
+
+[node name="For you" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.241
+anchor_bottom = 1.0
+offset_right = 462.0
+offset_bottom = 1080.0
+grow_vertical = 2
+theme = ExtResource("2_ae1vg")
+
+[node name="MarginContainer" type="MarginContainer" parent="For you"]
+layout_mode = 2
+theme = ExtResource("3_0hvjo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="For you/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="For you/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_4jlnv")
+text = "For you:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="For you/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Icon" parent="For you/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("9_y7y0l")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="For you/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Nick" type="Label" parent="For you/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("4_4jlnv")
+text = "SmallGrillDev"
+vertical_alignment = 1
+
+[node name="Start Game Animation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_i7rta")
+}
+
+[connection signal="pressed" from="VideoThing/HBoxContainer/Config" to="VideoThing/HBoxContainer" method="_on_config_pressed"]
+[connection signal="pressed" from="VideoThing/HBoxContainer/Play" to="VideoThing/HBoxContainer" method="_on_play_pressed"]
+[connection signal="pressed" from="VideoThing/HBoxContainer/Close" to="VideoThing/HBoxContainer" method="_on_close_pressed"]
+[connection signal="animation_finished" from="Start Game Animation" to="VideoThing/HBoxContainer" method="_on_start_game_animation_animation_finished"]

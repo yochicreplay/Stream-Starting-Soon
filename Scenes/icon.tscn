@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://uf8bl45nypt1"]
+
+[ext_resource type="Texture2D" uid="uid://h0js4rj60twe" path="res://Sprites/Clip/Circle.png" id="1_48t7g"]
+[ext_resource type="Theme" uid="uid://e5csiww2ob5i" path="res://Styles/Streamer Things/BLU.tres" id="1_uh4jc"]
+[ext_resource type="Texture2D" uid="uid://cfqbn4a2qlbth" path="res://Sprites/Streaming/Main Menu/Gradient.png" id="2_xitx7"]
+[ext_resource type="Theme" uid="uid://b6ncd4gj4et7x" path="res://Styles/Streamer Things/LogoText.tres" id="3_y338y"]
+
+[node name="Icon" type="Control"]
+layout_mode = 3
+anchor_right = 0.052
+anchor_bottom = 0.093
+offset_right = 0.159996
+offset_bottom = -0.440002
+
+[node name="Clip" type="TextureRect" parent="."]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_48t7g")
+
+[node name="Blue Background" type="PanelContainer" parent="Clip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uh4jc")
+
+[node name="Gradient" type="TextureRect" parent="Clip/Blue Background"]
+layout_mode = 2
+texture = ExtResource("2_xitx7")
+expand_mode = 1
+
+[node name="Nick" type="Label" parent="Clip/Blue Background/Gradient"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.4
+anchor_right = 0.997
+anchor_bottom = 0.606
+offset_right = 504.3
+offset_bottom = 104.4
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.165, 0.165)
+theme = ExtResource("3_y338y")
+text = "SmallGrillDev"

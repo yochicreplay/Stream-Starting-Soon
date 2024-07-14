@@ -1,0 +1,316 @@
+[gd_scene load_steps=29 format=3 uid="uid://dumwiljc34oin"]
+
+[ext_resource type="Theme" uid="uid://cfx26r38ahydf" path="res://Styles/Streaming Site/darkness.tres" id="1_1u8bu"]
+[ext_resource type="Shader" path="res://Shaders/stream_background.gdshader" id="2_bj8u7"]
+[ext_resource type="Theme" uid="uid://cqtya6aaawbue" path="res://Styles/Streaming Site/gray.tres" id="2_u6c1g"]
+[ext_resource type="Theme" uid="uid://diq4lrjuxirfr" path="res://Styles/Streaming Site/text.tres" id="3_gsupq"]
+[ext_resource type="Script" path="res://Scripts/Dialog.gd" id="4_e8wi6"]
+[ext_resource type="Theme" uid="uid://44an2lm6jxdl" path="res://Styles/Streaming Site/get_away_5pixels.tres" id="4_i2oh0"]
+[ext_resource type="Theme" uid="uid://b6ncd4gj4et7x" path="res://Styles/Streamer Things/LogoText.tres" id="4_jedt5"]
+[ext_resource type="Script" path="res://Scripts/ClickAnimation.gd" id="4_o3ueb"]
+[ext_resource type="Texture2D" uid="uid://ritpsctah8c0" path="res://Sprites/Icons/UI/Shop.png" id="7_1hbg4"]
+[ext_resource type="Theme" uid="uid://bhp44un8ylxyg" path="res://Styles/Streaming Site/button.tres" id="7_bmopj"]
+[ext_resource type="Script" path="res://Scripts/sendmessages.gd" id="9_7digq"]
+[ext_resource type="Texture2D" uid="uid://g5xno5f04bgf" path="res://Sprites/Icons/UI/Send.png" id="9_7e0q6"]
+[ext_resource type="PackedScene" uid="uid://cr7tbojis0rw1" path="res://Scenes/streamer.tscn" id="9_w7778"]
+[ext_resource type="Script" path="res://Scripts/Chat Text.gd" id="10_a1kgb"]
+[ext_resource type="Theme" uid="uid://e5csiww2ob5i" path="res://Styles/Streamer Things/BLU.tres" id="13_cr38k"]
+[ext_resource type="Script" path="res://Scripts/OpenShop.gd" id="14_ohrah"]
+[ext_resource type="Texture2D" uid="uid://cfqbn4a2qlbth" path="res://Sprites/Streaming/Main Menu/Gradient.png" id="14_p7r1m"]
+[ext_resource type="Script" path="res://Scripts/Stream Starting Soon Background In Game.gd" id="14_q1ufy"]
+[ext_resource type="Script" path="res://Scripts/Score.gd" id="15_724do"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5whxh"]
+shader = ExtResource("2_bj8u7")
+shader_parameter/color1 = Vector3(0.325, 0.36, 0.385)
+shader_parameter/color2 = Vector3(0.5, 0.5, 0.015)
+shader_parameter/color3 = Vector3(0.965, 1, 0.58)
+shader_parameter/color4 = Vector3(0.035, 0.13, 0.225)
+shader_parameter/grandient = 0.04
+shader_parameter/zoom = 1.0
+shader_parameter/disp = Vector2(0, 0)
+shader_parameter/rot_angle = Vector2(1, 1)
+shader_parameter/wiggle = 0.35
+shader_parameter/speed1 = 0.2
+shader_parameter/speed2 = 0.2
+shader_parameter/speed3 = 0.4
+
+[sub_resource type="Animation" id="Animation_5vcb7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.362, 2.362)]
+}
+
+[sub_resource type="Animation" id="Animation_5sbbg"]
+resource_name = "Squish"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 2), Vector2(2.362, 2.362)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nyfgd"]
+_data = {
+"RESET": SubResource("Animation_5vcb7"),
+"Squish": SubResource("Animation_5sbbg")
+}
+
+[sub_resource type="InputEventKey" id="InputEventKey_01i2a"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_mktpb"]
+events = [SubResource("InputEventKey_01i2a")]
+
+[sub_resource type="Animation" id="Animation_3m3o5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7n0va"]
+resource_name = "Start stream"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jykst"]
+_data = {
+"RESET": SubResource("Animation_3m3o5"),
+"Start stream": SubResource("Animation_7n0va")
+}
+
+[node name="Stream Site" type="Control" groups=["InGame"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Darkness" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_1u8bu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5whxh")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.703
+anchor_bottom = 1.0
+offset_right = 0.23999
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Streamer" parent="." instance=ExtResource("9_w7778")]
+position = Vector2(672, 761)
+scale = Vector2(2.362, 2.362)
+
+[node name="ClickAnimation" type="AnimationPlayer" parent="Streamer"]
+libraries = {
+"": SubResource("AnimationLibrary_nyfgd")
+}
+script = ExtResource("4_o3ueb")
+
+[node name="Dialog" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.703
+anchor_bottom = 1.0
+offset_right = 0.23999
+mouse_filter = 1
+script = ExtResource("4_e8wi6")
+
+[node name="Dialog Box" type="PanelContainer" parent="Dialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.259
+offset_bottom = 0.279999
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog/Dialog Box"]
+layout_mode = 2
+theme = ExtResource("4_jedt5")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[center]DAMN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!![/center]"
+scroll_active = false
+
+[node name="Polygon2D" type="Polygon2D" parent="Dialog"]
+color = Color(0.1, 0.1, 0.1, 0.6)
+polygon = PackedVector2Array(772, 654, 1201, 279, 1029, 279)
+
+[node name="Chat Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.703
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.23999
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Chat" type="PanelContainer" parent="Chat Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_u6c1g")
+
+[node name="MarginContainer" type="MarginContainer" parent="Chat Control/Chat"]
+layout_mode = 2
+theme = ExtResource("4_i2oh0")
+
+[node name="Chat Text" type="RichTextLabel" parent="Chat Control/Chat/MarginContainer" groups=["Chat"]]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_gsupq")
+bbcode_enabled = true
+text = "[wave][color=gray]Welcome to the chat![/color][/wave]
+"
+fit_content = true
+scroll_active = false
+script = ExtResource("10_a1kgb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Chat Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13
+anchor_top = 0.963
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.1
+offset_top = -18.04
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("9_7digq")
+
+[node name="Shop" type="Button" parent="Chat Control/HBoxContainer"]
+custom_minimum_size = Vector2(69, 0)
+layout_mode = 2
+theme = ExtResource("7_bmopj")
+text = "0"
+icon = ExtResource("7_1hbg4")
+expand_icon = true
+script = ExtResource("14_ohrah")
+
+[node name="Message" type="LineEdit" parent="Chat Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+placeholder_text = "Send a message"
+
+[node name="Send" type="TextureButton" parent="Chat Control/HBoxContainer"]
+custom_minimum_size = Vector2(56, 56)
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 4
+shortcut = SubResource("Shortcut_mktpb")
+texture_normal = ExtResource("9_7e0q6")
+stretch_mode = 0
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.884
+anchor_right = 0.176
+anchor_bottom = 1.0
+offset_top = 0.279907
+offset_right = -0.920013
+grow_vertical = 0
+theme = ExtResource("4_jedt5")
+text = "Score: 0"
+script = ExtResource("15_724do")
+
+[node name="Stream Starting Soon Background" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.703
+anchor_bottom = 1.0
+offset_right = 0.23999
+mouse_filter = 1
+theme = ExtResource("13_cr38k")
+script = ExtResource("14_q1ufy")
+
+[node name="Gradient" type="TextureRect" parent="Stream Starting Soon Background"]
+layout_mode = 2
+texture = ExtResource("14_p7r1m")
+expand_mode = 1
+
+[node name="Label" type="RichTextLabel" parent="Stream Starting Soon Background"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_jedt5")
+bbcode_enabled = true
+text = "[center][shake]Stream Starting Soon![/shake][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stream Starting Soon Background"]
+libraries = {
+"": SubResource("AnimationLibrary_jykst")
+}
+
+[node name="Click Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.154
+anchor_top = 0.256
+anchor_right = 0.547
+anchor_bottom = 1.0
+offset_left = 0.319977
+offset_top = 0.519989
+offset_right = 0.759888
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="Chat Control/HBoxContainer/Send" to="Chat Control/HBoxContainer" method="_on_send_pressed"]
+[connection signal="pressed" from="Click Button" to="Streamer/ClickAnimation" method="_on_click_button_pressed"]
+[connection signal="pressed" from="Click Button" to="Dialog" method="_on_click_button_pressed"]

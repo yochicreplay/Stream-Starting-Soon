@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://diq4lrjuxirfr"]
+
+[resource]
+Label/font_sizes/font_size = 36
+RichTextLabel/constants/text_highlight_h_padding = 3
+RichTextLabel/constants/text_highlight_v_padding = 3
+RichTextLabel/font_sizes/normal_font_size = 36

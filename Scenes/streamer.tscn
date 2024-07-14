@@ -1,0 +1,214 @@
+[gd_scene load_steps=24 format=3 uid="uid://cr7tbojis0rw1"]
+
+[ext_resource type="Script" path="res://Scripts/streamer.gd" id="1_hq3fk"]
+[ext_resource type="Texture2D" uid="uid://5p4ghwmfgg3n" path="res://Sprites/Streaming/Streamer/Bodies/Blue.png" id="1_snl3d"]
+[ext_resource type="Texture2D" uid="uid://ivqjepkiip2h" path="res://Sprites/Streaming/Streamer/Bodies/Green.png" id="2_wmpyl"]
+[ext_resource type="Texture2D" uid="uid://r5ahxp70ye2x" path="res://Sprites/Streaming/Streamer/Heads/Normal.png" id="3_asa84"]
+[ext_resource type="Texture2D" uid="uid://b5l75d2j8bram" path="res://Sprites/Streaming/Streamer/Bodies/Red.png" id="3_oneny"]
+[ext_resource type="Texture2D" uid="uid://c10jaghvr7tne" path="res://Sprites/Streaming/Streamer/Eyebrows/Normal.png" id="4_4hgo3"]
+[ext_resource type="Texture2D" uid="uid://cg4eyvwktkgrj" path="res://Sprites/Streaming/Streamer/Mouths/Frown.png" id="5_avjlo"]
+[ext_resource type="Texture2D" uid="uid://by6y7c4heya0v" path="res://Sprites/Streaming/Streamer/Mouths/Anger.png" id="5_i2cop"]
+[ext_resource type="Texture2D" uid="uid://dk0h4uh70xl2l" path="res://Sprites/Streaming/Streamer/Eyes/Normal.png" id="5_nljv5"]
+[ext_resource type="Texture2D" uid="uid://bmh77vs3umd6d" path="res://Sprites/Streaming/Streamer/Mouths/Smile open.png" id="6_1t75d"]
+[ext_resource type="Texture2D" uid="uid://b1knc63scq5xv" path="res://Sprites/Streaming/Streamer/Mouths/Smile.png" id="6_hxqx3"]
+[ext_resource type="Texture2D" uid="uid://cuqkl6l0li50x" path="res://Sprites/Streaming/Streamer/Mouths/Anger open.png" id="6_kr5u5"]
+[ext_resource type="Texture2D" uid="uid://c6rc20o2w00ee" path="res://Sprites/Streaming/Streamer/Eyes/Plink.png" id="6_v7ttp"]
+[ext_resource type="Texture2D" uid="uid://ckqo5la53wx8h" path="res://Sprites/Streaming/Streamer/Eyebrows/Anger.png" id="7_2xvxp"]
+[ext_resource type="Texture2D" uid="uid://cge8lqoyajnt1" path="res://Sprites/Streaming/Streamer/Mouths/Confused.png" id="7_o0har"]
+[ext_resource type="Texture2D" uid="uid://cvr347utghogd" path="res://Sprites/Streaming/Streamer/Mouths/Frown open.png" id="8_h3qqb"]
+[ext_resource type="Texture2D" uid="uid://dtsm6jrf35xwk" path="res://Sprites/Streaming/Streamer/Eyebrows/Confused.png" id="8_m7h33"]
+[ext_resource type="Texture2D" uid="uid://buewtvhelc7t4" path="res://Sprites/Streaming/Streamer/Mouths/Confused open.png" id="8_pv6o3"]
+[ext_resource type="Texture2D" uid="uid://cdoynyk1c1x8m" path="res://Sprites/Streaming/Streamer/Eyebrows/Sad.png" id="10_3rhv6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kofoj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_snl3d")
+}],
+"loop": true,
+"name": &"Blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wmpyl")
+}],
+"loop": true,
+"name": &"Green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oneny")
+}],
+"loop": true,
+"name": &"Red",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohs5c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nljv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nljv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nljv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nljv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v7ttp")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ro35s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2xvxp")
+}],
+"loop": true,
+"name": &"Anger",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_m7h33")
+}],
+"loop": true,
+"name": &"Confused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4hgo3")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_3rhv6")
+}],
+"loop": true,
+"name": &"Sad",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x20ol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i2cop")
+}],
+"loop": true,
+"name": &"Anger",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i2cop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kr5u5")
+}],
+"loop": true,
+"name": &"Anger Talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_o0har")
+}],
+"loop": true,
+"name": &"Confused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_o0har")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pv6o3")
+}],
+"loop": true,
+"name": &"Confused Talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_avjlo")
+}],
+"loop": true,
+"name": &"Frown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_avjlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h3qqb")
+}],
+"loop": true,
+"name": &"Frown Talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hxqx3")
+}],
+"loop": true,
+"name": &"Smile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hxqx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1t75d")
+}],
+"loop": true,
+"name": &"Smile Talk",
+"speed": 5.0
+}]
+
+[node name="Streamer" type="Node2D"]
+script = ExtResource("1_hq3fk")
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 113)
+sprite_frames = SubResource("SpriteFrames_kofoj")
+animation = &"Blue"
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(-11, -112)
+texture = ExtResource("3_asa84")
+
+[node name="Eyes" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9, -102)
+sprite_frames = SubResource("SpriteFrames_ohs5c")
+animation = &"Normal"
+frame_progress = 0.90708
+
+[node name="Eyebrows" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, -132)
+sprite_frames = SubResource("SpriteFrames_ro35s")
+animation = &"Normal"
+frame_progress = 0.211356
+
+[node name="Mouth" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -33)
+sprite_frames = SubResource("SpriteFrames_x20ol")
+animation = &"Smile"
