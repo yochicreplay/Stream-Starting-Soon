@@ -13,10 +13,11 @@ var dialogs = {'Introduction': ['[wave]Hi chat![/wave]', Global.emotions.Normal]
 	'Nerd': ["So now this should run...", Global.emotions.Normal],
 	'AngryGamer': ["Oh, come on!", Global.emotions.Anger],
 	'NoBots': ["Cheap viewers? GET OUT OF HERE", Global.emotions.Anger],
+	'Dwarves': ["I almost got replace by dwarves! But I was easier to make", Global.emotions.Anger]
 }
 
 var randomdialogs = ['Markiplier', 'Uninspired', 'Contraption', 'Nerd', 'AngryGamer', 'NoBots']
-var funnies = ['Egg', 'NSFW', 'Ace', 'AI']
+var funnies = ['Egg', 'NSFW', 'Ace', 'AI', 'Dwarves']
 var rewardDialogues = [["Hydrate? [tornado]*gulp* *gulp* *gulp*[/tornado]", Global.emotions.Normal], 
 	["Cheese Time... [tornado]*Sigh*[/tornado]", Global.emotions.Anger], 
 	["Sorry but I can't dance right now! I will add that to my debt...", Global.emotions.Sad]

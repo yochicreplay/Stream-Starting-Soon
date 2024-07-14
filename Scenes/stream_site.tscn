@@ -10,10 +10,10 @@
 [ext_resource type="Script" path="res://Scripts/ClickAnimation.gd" id="4_o3ueb"]
 [ext_resource type="Texture2D" uid="uid://ritpsctah8c0" path="res://Sprites/Icons/UI/Shop.png" id="7_1hbg4"]
 [ext_resource type="Theme" uid="uid://bhp44un8ylxyg" path="res://Styles/Streaming Site/button.tres" id="7_bmopj"]
+[ext_resource type="Script" path="res://Scripts/Chat Handler.gd" id="9_6pw0u"]
 [ext_resource type="Script" path="res://Scripts/sendmessages.gd" id="9_7digq"]
 [ext_resource type="Texture2D" uid="uid://g5xno5f04bgf" path="res://Sprites/Icons/UI/Send.png" id="9_7e0q6"]
 [ext_resource type="PackedScene" uid="uid://cr7tbojis0rw1" path="res://Scenes/streamer.tscn" id="9_w7778"]
-[ext_resource type="Script" path="res://Scripts/Chat Text.gd" id="10_a1kgb"]
 [ext_resource type="Theme" uid="uid://e5csiww2ob5i" path="res://Styles/Streamer Things/BLU.tres" id="13_cr38k"]
 [ext_resource type="Script" path="res://Scripts/OpenShop.gd" id="14_ohrah"]
 [ext_resource type="Texture2D" uid="uid://cfqbn4a2qlbth" path="res://Sprites/Streaming/Main Menu/Gradient.png" id="14_p7r1m"]
@@ -201,21 +201,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_u6c1g")
 
-[node name="MarginContainer" type="MarginContainer" parent="Chat Control/Chat"]
-layout_mode = 2
-theme = ExtResource("4_i2oh0")
-
-[node name="Chat Text" type="RichTextLabel" parent="Chat Control/Chat/MarginContainer" groups=["Chat"]]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("3_gsupq")
-bbcode_enabled = true
-text = "[wave][color=gray]Welcome to the chat![/color][/wave]
-"
-fit_content = true
-scroll_active = false
-script = ExtResource("10_a1kgb")
-
 [node name="HBoxContainer" type="HBoxContainer" parent="Chat Control"]
 layout_mode = 1
 anchors_preset = -1
@@ -253,6 +238,39 @@ size_flags_vertical = 4
 shortcut = SubResource("Shortcut_mktpb")
 texture_normal = ExtResource("9_7e0q6")
 stretch_mode = 0
+
+[node name="Actual Chat" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.704
+anchor_right = 1.0
+anchor_bottom = 0.944
+offset_left = -0.680054
+offset_bottom = -0.520081
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Actual Chat"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_i2oh0")
+
+[node name="Chat Handler" type="VBoxContainer" parent="Actual Chat/MarginContainer" groups=["Chat"]]
+layout_mode = 2
+alignment = 2
+script = ExtResource("9_6pw0u")
+
+[node name="Chat Text" type="RichTextLabel" parent="Actual Chat/MarginContainer/Chat Handler"]
+layout_mode = 2
+theme = ExtResource("3_gsupq")
+bbcode_enabled = true
+text = "[wave][color=gray]Welcome to the chat![/color][/wave]
+"
+fit_content = true
+scroll_active = false
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1

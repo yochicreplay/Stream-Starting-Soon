@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvmmfv6842e1p"]
+[gd_scene load_steps=3 format=3 uid="uid://cvmmfv6842e1p"]
 
 [ext_resource type="Theme" uid="uid://diq4lrjuxirfr" path="res://Styles/Streaming Site/text.tres" id="1_gs4jd"]
+[ext_resource type="Script" path="res://Scripts/Resources/Chat Message.gd" id="2_pd8t7"]
 
 [node name="Chat Message" type="RichTextLabel"]
 anchors_preset = -1
@@ -13,3 +14,4 @@ theme = ExtResource("1_gs4jd")
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
+script = ExtResource("2_pd8t7")

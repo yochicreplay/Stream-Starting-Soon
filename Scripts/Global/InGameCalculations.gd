@@ -30,7 +30,7 @@ var alreadyInGame = false
 
 func _when_in_game():
 	var timePassedSinceLastTimePlayed = Time.get_unix_time_from_system() - Variables.lastTimePlayed
-	var scoreReceivedWhileOffline = timePassedSinceLastTimePlayed/4*8*Variables.streamerFriends # 8 | 4 | 1
+	var scoreReceivedWhileOffline = timePassedSinceLastTimePlayed/60/60/4*8*Variables.streamerFriends # 8 | 4 | 1
 	Variables.score += scoreReceivedWhileOffline
 	alreadyInGame = true
 

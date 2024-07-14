@@ -9,15 +9,18 @@ func _ready():
 
 func _on_hydrate_pressed():
 	if Variables.SmallGrillBucks >= 100:
+		Variables.SmallGrillBucks -= 100
 		rewardBought.emit(Global.rewards.Hydrate)
 		buy_sfx.play()
 
 func _on_cheese_pressed():
 	if Variables.SmallGrillBucks >= 500:
+		Variables.SmallGrillBucks -= 500
 		rewardBought.emit(Global.rewards.Cheese)
 		buy_sfx.play()
 
 func _on_dance_pressed():
 	if Variables.SmallGrillBucks >= 1000:
+		Variables.SmallGrillBucks -= 1000
 		rewardBought.emit(Global.rewards.Dance)
 		buy_sfx.play()
