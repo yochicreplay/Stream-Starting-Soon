@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bu5sq460jj8e0"
-path="res://.godot/imported/Mod-click.wav-2b8d0c0195c2ea271c0b1aab1a24c878.sample"
+path="res://.godot/imported/Tabs-click.wav-95a4f787e3e2041d1f518dd066702a79.sample"
 
 [deps]
 
-source_file="res://Sounds/SFX/Mod-click.wav"
-dest_files=["res://.godot/imported/Mod-click.wav-2b8d0c0195c2ea271c0b1aab1a24c878.sample"]
+source_file="res://Sounds/SFX/Tabs-click.wav"
+dest_files=["res://.godot/imported/Tabs-click.wav-95a4f787e3e2041d1f518dd066702a79.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cg8wqkh52ljyw"
-path="res://.godot/imported/Reward-button-click.wav-117f2c800aff703ec55faeedbf10e517.sample"
+path="res://.godot/imported/Buying-button-click.wav-475919b2b4372c46f34e2d4e818cf753.sample"
 
 [deps]
 
-source_file="res://Sounds/SFX/Reward-button-click.wav"
-dest_files=["res://.godot/imported/Reward-button-click.wav-117f2c800aff703ec55faeedbf10e517.sample"]
+source_file="res://Sounds/SFX/Buying-button-click.wav"
+dest_files=["res://.godot/imported/Buying-button-click.wav-475919b2b4372c46f34e2d4e818cf753.sample"]
 
 [params]
 

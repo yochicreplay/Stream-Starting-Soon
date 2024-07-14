@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnjfysywcp3ye"]
+[gd_scene load_steps=11 format=3 uid="uid://bnjfysywcp3ye"]
 
 [ext_resource type="Theme" uid="uid://550jhmttlr2q" path="res://Styles/Streaming Site/popup.tres" id="1_m2i22"]
 [ext_resource type="Theme" uid="uid://bhp44un8ylxyg" path="res://Styles/Streaming Site/button.tres" id="2_qvmi4"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dh6gatr6uv7jw" path="res://Sprites/Icons/Reward Icons/Water.png" id="5_au3ce"]
 [ext_resource type="Texture2D" uid="uid://blmlksb175yd2" path="res://Sprites/Icons/Reward Icons/Cheese.png" id="6_58kob"]
 [ext_resource type="Texture2D" uid="uid://fqxadmderxvl" path="res://Sprites/Icons/Reward Icons/Dance.png" id="7_po8hr"]
+[ext_resource type="Texture2D" uid="uid://bee35ecpmm2fm" path="res://Sprites/Icons/Mod Icons/Streamer.png" id="8_3tpvk"]
+[ext_resource type="Texture2D" uid="uid://xaq7pql8g710" path="res://Sprites/Icons/Mod Icons/Funny.png" id="9_01lrp"]
+[ext_resource type="Texture2D" uid="uid://ccbfbuf2uufhf" path="res://Sprites/Icons/Mod Icons/Reader.png" id="10_4v1dd"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -101,3 +104,51 @@ horizontal_alignment = 1
 [node name="Friends" type="GridContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 columns = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Friends"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Streamer" type="TextureButton" parent="PanelContainer/VBoxContainer/Friends/VBoxContainer"]
+custom_minimum_size = Vector2(56, 60)
+layout_mode = 2
+tooltip_text = "Streams while you're away. Neat!"
+texture_normal = ExtResource("8_3tpvk")
+stretch_mode = 5
+
+[node name="Cost" type="Label" parent="PanelContainer/VBoxContainer/Friends/VBoxContainer"]
+layout_mode = 2
+text = "100 Scores"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Friends"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Funny" type="TextureButton" parent="PanelContainer/VBoxContainer/Friends/VBoxContainer2"]
+custom_minimum_size = Vector2(56, 60)
+layout_mode = 2
+tooltip_text = "Streams while you're away. Neat!"
+texture_normal = ExtResource("9_01lrp")
+stretch_mode = 5
+
+[node name="Cost" type="Label" parent="PanelContainer/VBoxContainer/Friends/VBoxContainer2"]
+layout_mode = 2
+text = "1000 Scores"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Friends"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Reader" type="TextureButton" parent="PanelContainer/VBoxContainer/Friends/VBoxContainer3"]
+custom_minimum_size = Vector2(56, 60)
+layout_mode = 2
+tooltip_text = "Streams while you're away. Neat!"
+texture_normal = ExtResource("10_4v1dd")
+stretch_mode = 5
+
+[node name="Cost" type="Label" parent="PanelContainer/VBoxContainer/Friends/VBoxContainer3"]
+layout_mode = 2
+text = "2500 Scores"
+horizontal_alignment = 1
