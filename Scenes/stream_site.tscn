@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dumwiljc34oin"]
+[gd_scene load_steps=31 format=3 uid="uid://dumwiljc34oin"]
 
 [ext_resource type="Theme" uid="uid://cfx26r38ahydf" path="res://Styles/Streaming Site/darkness.tres" id="1_1u8bu"]
 [ext_resource type="Shader" path="res://Shaders/stream_background.gdshader" id="2_bj8u7"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://Scripts/Stream Starting Soon Background In Game.gd" id="14_q1ufy"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="15_724do"]
 [ext_resource type="AudioStream" uid="uid://crls068a5ybws" path="res://Sounds/SFX/Message-clicked.ogg" id="16_n0lfs"]
+[ext_resource type="Script" path="res://Scripts/Resources/SoundEffect.gd" id="17_85dxs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5whxh"]
 shader = ExtResource("2_bj8u7")
@@ -276,6 +277,7 @@ scroll_active = false
 [node name="Click Message" type="AudioStreamPlayer" parent="Actual Chat"]
 unique_name_in_owner = true
 stream = ExtResource("16_n0lfs")
+script = ExtResource("17_85dxs")
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1

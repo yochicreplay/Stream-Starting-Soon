@@ -7,6 +7,7 @@ func _ready():
 	pitch_scale = randf_range(0.5, 0.75)
 
 func _process(_delta):
+	volume_db = Variables.SoundEffectsVolume
 	if Global.talking:
 		if !playing:
 			play()

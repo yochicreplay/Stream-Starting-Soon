@@ -3,6 +3,7 @@ extends Node
 var SaveTime:float = 300
 var SaveTimer:float = SaveTime
 
+
 ## VVV SAVE THIS VVV
 #Points
 var score:int = 0
@@ -15,6 +16,9 @@ var cheeseInflation:int = 0
 var streamerFriends:int = 0
 var readerFriends:int = 0
 var funnyFriends:int = 0
+
+#Options
+var SoundEffectsVolume:float
 
 ## STOP SAVING!!!
 
@@ -32,6 +36,7 @@ func _process(delta):
 func save_game():
 	var file = FileAccess.open("user://savegame.json", FileAccess.WRITE)
 	var saved_data = {}
+	saved_data['soundeffectsvolume'] = SoundEffectsVolume
 	saved_data['score'] = score
 	saved_data['smallgrillbucks'] = SmallGrillBucks
 	saved_data['cheeseinflation'] = cheeseInflation
@@ -58,3 +63,4 @@ func load_game():
 	readerFriends = saved_data['readerfriends']
 	funnyFriends = saved_data['funnyfriends']
 	lastTimePlayed = saved_data['lasttimeplayed']
+	SoundEffectsVolume = saved_data['soundeffectsvolume']

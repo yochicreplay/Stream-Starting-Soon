@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgw7m8yjaopqy"]
+
+[ext_resource type="Script" path="res://Scripts/config.gd" id="1_fnu7w"]
+[ext_resource type="Theme" uid="uid://cqtya6aaawbue" path="res://Styles/Streaming Site/gray.tres" id="1_quvvg"]
+[ext_resource type="Texture2D" uid="uid://cxy1lkh1hbyli" path="res://Sprites/Icons/UI/Close.png" id="2_rsqgc"]
+
+[node name="Config" type="Control" groups=["Config"]]
+layout_mode = 3
+anchor_right = 0.182
+anchor_bottom = 0.324
+offset_right = 0.559967
+offset_bottom = 0.0799866
+script = ExtResource("1_fnu7w")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_quvvg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sound Effects:"
+
+[node name="ProgressBar" type="HSlider" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -80.0
+max_value = 24.0
+
+[node name="Exit config" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.886
+anchor_right = 0.114
+anchor_bottom = 1.0
+offset_top = -0.100006
+offset_right = 0.0999985
+grow_vertical = 0
+texture_normal = ExtResource("2_rsqgc")
+stretch_mode = 0
+
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/HBoxContainer/ProgressBar" to="." method="_on_progress_bar_value_changed"]
+[connection signal="pressed" from="Exit config" to="." method="_on_exit_config_pressed"]

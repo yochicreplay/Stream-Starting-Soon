@@ -3,8 +3,16 @@ extends HBoxContainer
 @onready var initial_click_sound = %"Initial Click"
 @onready var start_game_animation = %"Start Game Animation"
 
+const CONFIG = preload("res://Scenes/Menus/config.tscn")
+
+func _process(_delta):
+	initial_click_sound.volume_db = Variables.SoundEffectsVolume
+
 func _on_config_pressed():
 	initial_click_sound.play()
+	if !get_tree().get_first_node_in_group("Config"):
+		var new_config = CONFIG.instantiate()
+		get_tree().call_deferred('add_child', new_config)
 
 func _on_play_pressed():
 	initial_click_sound.play()

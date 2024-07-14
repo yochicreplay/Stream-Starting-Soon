@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bnjfysywcp3ye"]
+[gd_scene load_steps=18 format=3 uid="uid://bnjfysywcp3ye"]
 
 [ext_resource type="Theme" uid="uid://550jhmttlr2q" path="res://Styles/Streaming Site/popup.tres" id="1_m2i22"]
 [ext_resource type="Script" path="res://Scripts/shop_popup.gd" id="1_nrru2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://fqxadmderxvl" path="res://Sprites/Icons/Reward Icons/Dance.png" id="7_po8hr"]
 [ext_resource type="Script" path="res://Scripts/Friends.gd" id="8_0riia"]
 [ext_resource type="Texture2D" uid="uid://bee35ecpmm2fm" path="res://Sprites/Icons/Mod Icons/Streamer.png" id="8_3tpvk"]
+[ext_resource type="Script" path="res://Scripts/Resources/SoundEffect.gd" id="8_s6puf"]
 [ext_resource type="Texture2D" uid="uid://xaq7pql8g710" path="res://Sprites/Icons/Mod Icons/Funny.png" id="9_01lrp"]
 [ext_resource type="Texture2D" uid="uid://ccbfbuf2uufhf" path="res://Sprites/Icons/Mod Icons/Reader.png" id="10_4v1dd"]
 [ext_resource type="Texture2D" uid="uid://cxy1lkh1hbyli" path="res://Sprites/Icons/UI/Close.png" id="15_mfoij"]
@@ -63,6 +64,7 @@ icon = ExtResource("4_jpvdt")
 [node name="Tab Sound" type="AudioStreamPlayer" parent="PanelContainer/VBoxContainer/Shop Tabs"]
 unique_name_in_owner = true
 stream = ExtResource("6_2s7h5")
+script = ExtResource("8_s6puf")
 
 [node name="Rewards" type="GridContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -118,6 +120,7 @@ text = "1000 SGB"
 horizontal_alignment = 1
 
 [node name="Buy SFX" type="AudioStreamPlayer" parent="PanelContainer/VBoxContainer/Rewards"]
+script = ExtResource("8_s6puf")
 
 [node name="Friends" type="GridContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -137,7 +140,7 @@ stretch_mode = 5
 
 [node name="Cost" type="Label" parent="PanelContainer/VBoxContainer/Friends/VBoxContainer"]
 layout_mode = 2
-text = "100 Scores"
+text = "15 Scores"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Friends"]
@@ -153,7 +156,7 @@ stretch_mode = 5
 
 [node name="Cost" type="Label" parent="PanelContainer/VBoxContainer/Friends/VBoxContainer2"]
 layout_mode = 2
-text = "1000 Scores"
+text = "25 Scores"
 horizontal_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Friends"]
@@ -169,10 +172,11 @@ stretch_mode = 5
 
 [node name="Cost" type="Label" parent="PanelContainer/VBoxContainer/Friends/VBoxContainer3"]
 layout_mode = 2
-text = "2500 Scores"
+text = "100 Scores"
 horizontal_alignment = 1
 
 [node name="Buy SFX" type="AudioStreamPlayer" parent="PanelContainer/VBoxContainer/Friends"]
+script = ExtResource("8_s6puf")
 
 [node name="Exit Shop" type="TextureButton" parent="."]
 layout_mode = 1
