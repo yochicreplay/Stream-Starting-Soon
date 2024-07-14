@@ -3,9 +3,6 @@ extends HBoxContainer
 @onready var initial_click_sound = %"Initial Click"
 @onready var start_game_animation = %"Start Game Animation"
 
-func _ready():
-	start_game_animation.play("RESET")
-
 func _on_config_pressed():
 	initial_click_sound.play()
 

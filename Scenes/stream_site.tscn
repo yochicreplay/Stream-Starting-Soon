@@ -155,7 +155,7 @@ libraries = {
 }
 script = ExtResource("4_o3ueb")
 
-[node name="Dialog" type="Control" parent="."]
+[node name="Dialog" type="Control" parent="." groups=["DialogueSystem"]]
 layout_mode = 1
 anchor_right = 0.703
 anchor_bottom = 1.0
@@ -232,6 +232,7 @@ script = ExtResource("9_7digq")
 [node name="Shop" type="Button" parent="Chat Control/HBoxContainer"]
 custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
+tooltip_text = "Shop to buy stuff to help get more score."
 theme = ExtResource("7_bmopj")
 text = "0"
 icon = ExtResource("7_1hbg4")

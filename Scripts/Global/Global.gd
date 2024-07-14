@@ -1,5 +1,6 @@
 extends Node
 
+enum rewards {Hydrate, Cheese, Dance}
 enum emotions {Normal, Happy, Anger, Sad, Confusion}
 var talking:bool
 

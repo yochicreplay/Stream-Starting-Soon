@@ -7,12 +7,20 @@ var dialogs = {'Introduction': ['[wave]Hi chat![/wave]', Global.emotions.Normal]
 	'Egg': ["Where's my egg?", Global.emotions.Confusion],
 	'NSFW': ["I'm sorry for breaking the rules but... NSFW", Global.emotions.Sad],
 	'Ace': ["Don't trust [shake]Kingchild[/shake]!", Global.emotions.Normal],
+	'AI': ["Sorry. But as an AI Language Model, I cannot create funny dialogue for a streamer.", Global.emotions.Confusion],
 	'Uninspired': ["I can't think of anything funny...", Global.emotions.Sad],
-	'Contraption': ["Chat! I recently bought a [wave]funny[/wave] contraption! IF I move, I say something funny!", Global.emotions.Happy]
+	'Contraption': ["Chat! I recently bought a [wave]funny[/wave] contraption! IF I move, I say something funny!", Global.emotions.Happy],
+	'Nerd': ["So now this should run...", Global.emotions.Normal],
+	'AngryGamer': ["Oh, come on!", Global.emotions.Anger],
+	'NoBots': ["Cheap viewers? GET OUT OF HERE", Global.emotions.Anger],
 }
 
-var randomdialogs = ['Markiplier', 'Uninspired', 'Contraption']
-var funnies = ['Egg', 'NSFW', 'Ace']
+var randomdialogs = ['Markiplier', 'Uninspired', 'Contraption', 'Nerd', 'AngryGamer', 'NoBots']
+var funnies = ['Egg', 'NSFW', 'Ace', 'AI']
+var rewardDialogues = [["Hydrate? [tornado]*gulp* *gulp* *gulp*[/tornado]", Global.emotions.Normal], 
+	["Cheese Time... [tornado]*Sigh*[/tornado]", Global.emotions.Anger], 
+	["Sorry but I can't dance right now! I will add that to my debt...", Global.emotions.Sad]
+]
 
 signal said(emotion)
 var disappearTime:float = 5.0
@@ -24,6 +32,9 @@ func _say(what):
 	modulate.a = 1
 	Global.talking = true
 	said.emit(what[1])
+
+func catchRewards(reward):
+	_say(rewardDialogues[reward])
 
 func _ready():
 	_say(dialogs['Introduction'])
