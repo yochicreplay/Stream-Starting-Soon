@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cr7tbojis0rw1"]
+[gd_scene load_steps=25 format=3 uid="uid://cr7tbojis0rw1"]
 
 [ext_resource type="Script" path="res://Scripts/streamer.gd" id="1_hq3fk"]
 [ext_resource type="Texture2D" uid="uid://5p4ghwmfgg3n" path="res://Sprites/Streaming/Streamer/Bodies/Blue.png" id="1_snl3d"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dtsm6jrf35xwk" path="res://Sprites/Streaming/Streamer/Eyebrows/Confused.png" id="8_m7h33"]
 [ext_resource type="Texture2D" uid="uid://buewtvhelc7t4" path="res://Sprites/Streaming/Streamer/Mouths/Confused open.png" id="8_pv6o3"]
 [ext_resource type="Texture2D" uid="uid://cdoynyk1c1x8m" path="res://Sprites/Streaming/Streamer/Eyebrows/Sad.png" id="10_3rhv6"]
+[ext_resource type="Script" path="res://Scripts/TalkingAudioPlayer.gd" id="20_0x6eh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kofoj"]
 animations = [{
@@ -212,3 +213,8 @@ frame_progress = 0.211356
 position = Vector2(3, -33)
 sprite_frames = SubResource("SpriteFrames_x20ol")
 animation = &"Smile"
+
+[node name="TalkingAudioPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("20_0x6eh")
+
+[connection signal="finished" from="TalkingAudioPlayer" to="TalkingAudioPlayer" method="_on_finished"]

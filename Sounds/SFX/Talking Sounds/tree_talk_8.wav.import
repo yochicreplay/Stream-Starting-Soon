@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://tq7tdo5rp3fi"
+path="res://.godot/imported/tree_talk_8.wav-23702d001218fc15972fe2dbb6e6a26b.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/Talking Sounds/tree_talk_8.wav"
+dest_files=["res://.godot/imported/tree_talk_8.wav-23702d001218fc15972fe2dbb6e6a26b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
